@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UseManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -22,6 +26,8 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+                        @if (User.IsInRole("Admin"))
+                        {    
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Books" asp-action="Index">Books</a>
                         </li>
@@ -37,6 +43,7 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Tags" asp-action="Index">Tags</a>
                         </li>
+                        }
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
