@@ -1,5 +1,5 @@
 ﻿using Azure;
-using BookStoreApp.Models;
+using BookStoreApp.Models.Domain;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
