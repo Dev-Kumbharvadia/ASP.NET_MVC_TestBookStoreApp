@@ -17,7 +17,6 @@
 
   <ItemGroup>
     <Folder Include="Data\Migrations\" />
-    <Folder Include="Views\User\" />
     <Folder Include="wwwroot\Uploads\" />
   </ItemGroup>
 

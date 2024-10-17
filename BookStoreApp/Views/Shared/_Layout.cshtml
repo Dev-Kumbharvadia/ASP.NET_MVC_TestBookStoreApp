@@ -44,6 +44,11 @@
                             <a class="nav-link" asp-controller="Tags" asp-action="Index">Tags</a>
                         </li>
                         }
+                        else if(User.IsInRole("Customer"))
+                        {
+
+                        }
+
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
