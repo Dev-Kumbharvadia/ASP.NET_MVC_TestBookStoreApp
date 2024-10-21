@@ -269,8 +269,8 @@ namespace BookStoreApp.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { new Guid("7f1bf428-ec68-4d07-9510-e651afd7acef"), "Frank Herbert" },
-                    { new Guid("fb36ed19-cdec-4869-998f-2d0d36f0b2c0"), "Robert Caro" }
+                    { new Guid("5cb62989-8a16-42d0-8eb0-c4f3d66d17f9"), "Robert Caro" },
+                    { new Guid("c12c9341-3bdb-4f25-98ca-c386b7ab34a0"), "Frank Herbert" }
                 });
 
             migrationBuilder.InsertData(
@@ -278,8 +278,8 @@ namespace BookStoreApp.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { new Guid("5431ff71-6f4e-458d-a059-ed1c149ae62e"), "Non-Fiction" },
-                    { new Guid("c0c609c7-dc0c-462d-ac0c-03058799dc6e"), "Fiction" }
+                    { new Guid("18fb0b55-ccae-4522-a77f-415d3cc1ee52"), "Non-Fiction" },
+                    { new Guid("abc39ab5-c9ed-4b6b-a070-ba9badf4f2d6"), "Fiction" }
                 });
 
             migrationBuilder.InsertData(
@@ -287,8 +287,8 @@ namespace BookStoreApp.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { new Guid("e762fc1d-7193-4724-b314-a60d974acc40"), "HarperCollins" },
-                    { new Guid("f5b71aab-d88e-4f86-8bce-e5b6d5cfa436"), "Penguin Random House" }
+                    { new Guid("4c958310-5440-4560-b606-d22e59dad394"), "HarperCollins" },
+                    { new Guid("7be11046-32bb-4544-9b6a-bcaf28604fbc"), "Penguin Random House" }
                 });
 
             migrationBuilder.InsertData(
@@ -296,8 +296,8 @@ namespace BookStoreApp.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { new Guid("0be3ba71-5839-4712-aa04-22645d2c1486"), "Biography" },
-                    { new Guid("10f561ae-7932-4312-80a9-6e1d7d1f573d"), "Science Fiction" }
+                    { new Guid("366fd383-c235-4eb5-933e-249411960cd2"), "Biography" },
+                    { new Guid("ce416a95-9221-4759-9985-7e41f120419a"), "Science Fiction" }
                 });
 
             migrationBuilder.InsertData(
@@ -305,8 +305,8 @@ namespace BookStoreApp.Migrations
                 columns: new[] { "Id", "AuthorId", "CategoryId", "ImageUrl", "PublisherId", "Title" },
                 values: new object[,]
                 {
-                    { new Guid("52e77eaa-0306-49e9-a34a-3b70865c359c"), new Guid("7f1bf428-ec68-4d07-9510-e651afd7acef"), new Guid("c0c609c7-dc0c-462d-ac0c-03058799dc6e"), "default-image-dune.jpg", new Guid("f5b71aab-d88e-4f86-8bce-e5b6d5cfa436"), "Dune" },
-                    { new Guid("8257f115-f8bb-484c-9e4d-cf872504f631"), new Guid("fb36ed19-cdec-4869-998f-2d0d36f0b2c0"), new Guid("5431ff71-6f4e-458d-a059-ed1c149ae62e"), "default-image-power-broker.jpg", new Guid("e762fc1d-7193-4724-b314-a60d974acc40"), "The Power Broker" }
+                    { new Guid("18ee33fe-4685-40ab-975c-001a9f41e76d"), new Guid("c12c9341-3bdb-4f25-98ca-c386b7ab34a0"), new Guid("abc39ab5-c9ed-4b6b-a070-ba9badf4f2d6"), "default-image-dune.jpg", new Guid("7be11046-32bb-4544-9b6a-bcaf28604fbc"), "Dune" },
+                    { new Guid("21fb38b1-58b5-49f9-9132-c47450eb892a"), new Guid("5cb62989-8a16-42d0-8eb0-c4f3d66d17f9"), new Guid("18fb0b55-ccae-4522-a77f-415d3cc1ee52"), "default-image-power-broker.jpg", new Guid("4c958310-5440-4560-b606-d22e59dad394"), "The Power Broker" }
                 });
 
             migrationBuilder.InsertData(
@@ -314,8 +314,8 @@ namespace BookStoreApp.Migrations
                 columns: new[] { "BookId", "TagId" },
                 values: new object[,]
                 {
-                    { new Guid("52e77eaa-0306-49e9-a34a-3b70865c359c"), new Guid("10f561ae-7932-4312-80a9-6e1d7d1f573d") },
-                    { new Guid("8257f115-f8bb-484c-9e4d-cf872504f631"), new Guid("0be3ba71-5839-4712-aa04-22645d2c1486") }
+                    { new Guid("18ee33fe-4685-40ab-975c-001a9f41e76d"), new Guid("ce416a95-9221-4759-9985-7e41f120419a") },
+                    { new Guid("21fb38b1-58b5-49f9-9132-c47450eb892a"), new Guid("366fd383-c235-4eb5-933e-249411960cd2") }
                 });
 
             migrationBuilder.CreateIndex(

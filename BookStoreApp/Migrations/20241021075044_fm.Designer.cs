@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookStoreApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241016155416_fm")]
+    [Migration("20241021075044_fm")]
     partial class fm
     {
         /// <inheritdoc />
@@ -25,7 +25,7 @@ namespace BookStoreApp.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("BookStoreApp.Models.Author", b =>
+            modelBuilder.Entity("BookStoreApp.Models.Domain.Author", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -42,17 +42,17 @@ namespace BookStoreApp.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("7f1bf428-ec68-4d07-9510-e651afd7acef"),
+                            Id = new Guid("c12c9341-3bdb-4f25-98ca-c386b7ab34a0"),
                             Name = "Frank Herbert"
                         },
                         new
                         {
-                            Id = new Guid("fb36ed19-cdec-4869-998f-2d0d36f0b2c0"),
+                            Id = new Guid("5cb62989-8a16-42d0-8eb0-c4f3d66d17f9"),
                             Name = "Robert Caro"
                         });
                 });
 
-            modelBuilder.Entity("BookStoreApp.Models.Book", b =>
+            modelBuilder.Entity("BookStoreApp.Models.Domain.Book", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -88,25 +88,25 @@ namespace BookStoreApp.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("52e77eaa-0306-49e9-a34a-3b70865c359c"),
-                            AuthorId = new Guid("7f1bf428-ec68-4d07-9510-e651afd7acef"),
-                            CategoryId = new Guid("c0c609c7-dc0c-462d-ac0c-03058799dc6e"),
+                            Id = new Guid("18ee33fe-4685-40ab-975c-001a9f41e76d"),
+                            AuthorId = new Guid("c12c9341-3bdb-4f25-98ca-c386b7ab34a0"),
+                            CategoryId = new Guid("abc39ab5-c9ed-4b6b-a070-ba9badf4f2d6"),
                             ImageUrl = "default-image-dune.jpg",
-                            PublisherId = new Guid("f5b71aab-d88e-4f86-8bce-e5b6d5cfa436"),
+                            PublisherId = new Guid("7be11046-32bb-4544-9b6a-bcaf28604fbc"),
                             Title = "Dune"
                         },
                         new
                         {
-                            Id = new Guid("8257f115-f8bb-484c-9e4d-cf872504f631"),
-                            AuthorId = new Guid("fb36ed19-cdec-4869-998f-2d0d36f0b2c0"),
-                            CategoryId = new Guid("5431ff71-6f4e-458d-a059-ed1c149ae62e"),
+                            Id = new Guid("21fb38b1-58b5-49f9-9132-c47450eb892a"),
+                            AuthorId = new Guid("5cb62989-8a16-42d0-8eb0-c4f3d66d17f9"),
+                            CategoryId = new Guid("18fb0b55-ccae-4522-a77f-415d3cc1ee52"),
                             ImageUrl = "default-image-power-broker.jpg",
-                            PublisherId = new Guid("e762fc1d-7193-4724-b314-a60d974acc40"),
+                            PublisherId = new Guid("4c958310-5440-4560-b606-d22e59dad394"),
                             Title = "The Power Broker"
                         });
                 });
 
-            modelBuilder.Entity("BookStoreApp.Models.BookTag", b =>
+            modelBuilder.Entity("BookStoreApp.Models.Domain.BookTag", b =>
                 {
                     b.Property<Guid>("BookId")
                         .HasColumnType("uniqueidentifier");
@@ -123,17 +123,17 @@ namespace BookStoreApp.Migrations
                     b.HasData(
                         new
                         {
-                            BookId = new Guid("52e77eaa-0306-49e9-a34a-3b70865c359c"),
-                            TagId = new Guid("10f561ae-7932-4312-80a9-6e1d7d1f573d")
+                            BookId = new Guid("18ee33fe-4685-40ab-975c-001a9f41e76d"),
+                            TagId = new Guid("ce416a95-9221-4759-9985-7e41f120419a")
                         },
                         new
                         {
-                            BookId = new Guid("8257f115-f8bb-484c-9e4d-cf872504f631"),
-                            TagId = new Guid("0be3ba71-5839-4712-aa04-22645d2c1486")
+                            BookId = new Guid("21fb38b1-58b5-49f9-9132-c47450eb892a"),
+                            TagId = new Guid("366fd383-c235-4eb5-933e-249411960cd2")
                         });
                 });
 
-            modelBuilder.Entity("BookStoreApp.Models.Category", b =>
+            modelBuilder.Entity("BookStoreApp.Models.Domain.Category", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -150,17 +150,17 @@ namespace BookStoreApp.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("c0c609c7-dc0c-462d-ac0c-03058799dc6e"),
+                            Id = new Guid("abc39ab5-c9ed-4b6b-a070-ba9badf4f2d6"),
                             Name = "Fiction"
                         },
                         new
                         {
-                            Id = new Guid("5431ff71-6f4e-458d-a059-ed1c149ae62e"),
+                            Id = new Guid("18fb0b55-ccae-4522-a77f-415d3cc1ee52"),
                             Name = "Non-Fiction"
                         });
                 });
 
-            modelBuilder.Entity("BookStoreApp.Models.Publisher", b =>
+            modelBuilder.Entity("BookStoreApp.Models.Domain.Publisher", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -177,17 +177,17 @@ namespace BookStoreApp.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f5b71aab-d88e-4f86-8bce-e5b6d5cfa436"),
+                            Id = new Guid("7be11046-32bb-4544-9b6a-bcaf28604fbc"),
                             Name = "Penguin Random House"
                         },
                         new
                         {
-                            Id = new Guid("e762fc1d-7193-4724-b314-a60d974acc40"),
+                            Id = new Guid("4c958310-5440-4560-b606-d22e59dad394"),
                             Name = "HarperCollins"
                         });
                 });
 
-            modelBuilder.Entity("BookStoreApp.Models.Tag", b =>
+            modelBuilder.Entity("BookStoreApp.Models.Domain.Tag", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -204,12 +204,12 @@ namespace BookStoreApp.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("10f561ae-7932-4312-80a9-6e1d7d1f573d"),
+                            Id = new Guid("ce416a95-9221-4759-9985-7e41f120419a"),
                             Name = "Science Fiction"
                         },
                         new
                         {
-                            Id = new Guid("0be3ba71-5839-4712-aa04-22645d2c1486"),
+                            Id = new Guid("366fd383-c235-4eb5-933e-249411960cd2"),
                             Name = "Biography"
                         });
                 });
@@ -416,21 +416,21 @@ namespace BookStoreApp.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("BookStoreApp.Models.Book", b =>
+            modelBuilder.Entity("BookStoreApp.Models.Domain.Book", b =>
                 {
-                    b.HasOne("BookStoreApp.Models.Author", "Author")
+                    b.HasOne("BookStoreApp.Models.Domain.Author", "Author")
                         .WithMany("Books")
                         .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BookStoreApp.Models.Category", "Category")
+                    b.HasOne("BookStoreApp.Models.Domain.Category", "Category")
                         .WithMany("Books")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BookStoreApp.Models.Publisher", "Publisher")
+                    b.HasOne("BookStoreApp.Models.Domain.Publisher", "Publisher")
                         .WithMany("Books")
                         .HasForeignKey("PublisherId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -443,15 +443,15 @@ namespace BookStoreApp.Migrations
                     b.Navigation("Publisher");
                 });
 
-            modelBuilder.Entity("BookStoreApp.Models.BookTag", b =>
+            modelBuilder.Entity("BookStoreApp.Models.Domain.BookTag", b =>
                 {
-                    b.HasOne("BookStoreApp.Models.Book", "Book")
+                    b.HasOne("BookStoreApp.Models.Domain.Book", "Book")
                         .WithMany("BookTags")
                         .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BookStoreApp.Models.Tag", "Tag")
+                    b.HasOne("BookStoreApp.Models.Domain.Tag", "Tag")
                         .WithMany("BookTags")
                         .HasForeignKey("TagId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -513,27 +513,27 @@ namespace BookStoreApp.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("BookStoreApp.Models.Author", b =>
+            modelBuilder.Entity("BookStoreApp.Models.Domain.Author", b =>
                 {
                     b.Navigation("Books");
                 });
 
-            modelBuilder.Entity("BookStoreApp.Models.Book", b =>
+            modelBuilder.Entity("BookStoreApp.Models.Domain.Book", b =>
                 {
                     b.Navigation("BookTags");
                 });
 
-            modelBuilder.Entity("BookStoreApp.Models.Category", b =>
+            modelBuilder.Entity("BookStoreApp.Models.Domain.Category", b =>
                 {
                     b.Navigation("Books");
                 });
 
-            modelBuilder.Entity("BookStoreApp.Models.Publisher", b =>
+            modelBuilder.Entity("BookStoreApp.Models.Domain.Publisher", b =>
                 {
                     b.Navigation("Books");
                 });
 
-            modelBuilder.Entity("BookStoreApp.Models.Tag", b =>
+            modelBuilder.Entity("BookStoreApp.Models.Domain.Tag", b =>
                 {
                     b.Navigation("BookTags");
                 });

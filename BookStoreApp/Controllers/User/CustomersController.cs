@@ -1,4 +1,5 @@
 ﻿using BookStoreApp.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,7 @@ namespace BookStoreApp.Controllers.User
             _context = context;
         }
 
+        [Authorize(Roles = "Customer")]
         public async Task<IActionResult> Index()
         {
             var books = _context.Books.Include(b => b.Author)
